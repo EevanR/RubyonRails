@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     article = Article.create(article_params)
 
     if article.persisted? 
-      redirect_to article, notice: "Article was successfully created"
+      redirect_to article
     else 
       render 'new'
     end
