@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id])    
   end
 
   def new
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     article = Article.create(article_params)
 
     if article.persisted? 
-      redirect_to article
+      redirect_to article, notice: "Article was successfully created"
     else 
       render 'new'
     end

@@ -11,7 +11,7 @@ Feature: User can create articles
         When I fill in "Title" with "Happy Holidays"
         And I fill in "Content" with "Buy your gifts now!"
         And I click on "Create Article"
-        Then I should be on the "Happy holidays" page
+        Then I should be on the "Happy Holidays" page
         And I should see "Article was successfully created"
         And I should see "Happy Holidays"
         And I should see "Buy your gifts now!"
