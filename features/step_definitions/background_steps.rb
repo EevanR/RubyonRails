@@ -5,8 +5,8 @@ Given("the following articles exists:") do |table|
 end
 
 Given("the following user exist:") do |table|
-   table.hashes.each do |user_attrs|
-        create(:user, user_attrs)
+   table.hashes.each do |hash|
+        User.create!(hash)
    end
 end
   
