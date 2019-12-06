@@ -11,7 +11,8 @@ Feature: User can create articles
 
     Scenario: User can successfully creates an article
         Given I am logged in as "user@mail.com"
-        And I click on "New Article"
+        And I am on the Signed in page
+        When I click on "New Article"
         And I fill in "Title" with "Happy Holidays"
         And I fill in "Content" with "Buy your gifts now!"
         And I click on "Create Article"

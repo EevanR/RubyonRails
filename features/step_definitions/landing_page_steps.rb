@@ -1,6 +1,6 @@
 When(/^I am on the landing page$/) do
     visit root_path
-  end
+end
 
 When("I fill in {string} with {string}") do |input, content|
     fill_in input, with: content
