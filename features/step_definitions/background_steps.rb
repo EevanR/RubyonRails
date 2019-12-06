@@ -5,12 +5,12 @@ Given("the following articles exists:") do |table|
 end
 
 Given("the following user exist:") do |table|
-   table.hashes.each do |hash|
-        User.create!(hash)
+   table.hashes.each do |user_attrs|
+        User.create!(user_attrs)
    end
 end
   
-Given("I am logged in as {string}") do |string|
+Given("I am logged in as {string}") do |email|
     user = User.find_by(email: email)
 
     login_as(user, scope: :user)
