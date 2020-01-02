@@ -17,4 +17,6 @@ Feature: User can edit articles
     And I am on the Signed in page
     When I click on "A breaking news item"
     And I click on "Edit Article"
-    
+    And I fill in "Content" with "Not so breaking action"
+    And I click on "Update Article"
+    Then I should see "Not so breaking action"
