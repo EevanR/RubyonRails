@@ -1,6 +1,8 @@
 <p>A breaking news item</p>
 <p>Some breaking action</p>
-<%= link_to "New Article", new_article_path %>
+<% if user_signed_in? %>
+  <%= link_to "New Article", new_article_path %>
+<% end %>
 
 <ul>
   <% @articles.each do |article| %>
