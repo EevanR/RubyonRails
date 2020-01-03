@@ -33,6 +33,11 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    if @article.author_id == current_user.id
+      render :edit
+    else
+      redirect_to root_path, notice: "You are not authorized to do that"
+    end
   end
 
   def destroy
