@@ -13,7 +13,7 @@ Feature: Visitor can comment on an article
   Scenario: Visitor can comment successfully
     When I click on "A breaking News Article"
     And I fill in "Comment" with "This is fake news!!!!"
-    And I click on "Submit"
-    Then I should see "Commented"
+    And I click on "Submit comment"
+    Then I should see "Your comment was successfully submited"
     And I should be at "A breaking News Article"
     And I should see "This is fake news!!!!"
