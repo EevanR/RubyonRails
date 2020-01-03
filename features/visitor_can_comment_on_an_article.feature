@@ -34,4 +34,4 @@ Feature: User can comment on an article
     And I click on "Submit comment"
     Then I should see "1 Comment"
     And I click on "Delete Comment"
-    Then I should see "0<div></div> Comments"
+    Then I should see "0 Comments"
