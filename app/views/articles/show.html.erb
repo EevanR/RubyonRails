@@ -13,10 +13,12 @@
 
 <% @article.comments.each do |comment| %>
   <p> <%= comment.body %> </p>
-  <% if comment.id? %>
+  <% if comment.id? && user_signed_in? %>
     <%= button_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 <% end %>
 
-<%= button_to "Edit Article", edit_article_path, :method => "get" %>
-<%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
+<% if user_signed_in? %>
+  <%= button_to "Edit Article", edit_article_path, :method => "get" %>
+  <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
+<% end %>
