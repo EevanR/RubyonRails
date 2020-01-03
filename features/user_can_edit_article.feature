@@ -4,7 +4,7 @@ Feature: User can edit articles
   I would like to be able to edit articles
 
   Background:
-    Given the following user exist:
+    Given the following users exist:
       | email         | password |
       | user@mail.com | password |
 

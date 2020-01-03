@@ -4,7 +4,7 @@ Feature: User can comment on an article
   I would like to be able to comment on an article
 
   Background:
-    Given the following user exist:
+    Given the following users exist:
       | email         | password |
       | user@mail.com | password |
 
