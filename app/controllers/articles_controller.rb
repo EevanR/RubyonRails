@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    article = Article.create(article_params)
+    article = Article.create(article_params.merge(author_id: current_user.id))
     
     if article.persisted?
       redirect_to article, notice: 'Article was successfully created.'
@@ -28,8 +28,6 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       redirect_to @article, notice: "Article successfully updated!"
-    else
-      render 'edit'
     end
   end
 

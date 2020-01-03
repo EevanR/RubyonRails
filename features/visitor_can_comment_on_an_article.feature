@@ -9,8 +9,8 @@ Feature: User can comment on an article
       | user@mail.com | password |
 
     And the following articles exists:
-      | title                   | content              |
-      | A breaking News Article | Some breaking action |
+      | title                   | content              | author        |
+      | A breaking News Article | Some breaking action | user@mail.com |
 
     And I am logged in as "user@mail.com"
     And I am on the landing page

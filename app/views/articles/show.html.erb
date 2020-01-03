@@ -1,13 +1,13 @@
 <h1><%= @article.title%></h1>
 
-<% if user_signed_in? %>
-  <%= button_to "Edit Article", edit_article_path, :method => "get" %>
-  <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
-<% end %>
-
 <p>
   <%= @article.content%>
 </p>
+
+<% if user_signed_in? && @article.author_id == current_user.id %>
+  <%= button_to "Edit Article", edit_article_path, :method => "get" %>
+  <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
+<% end %>
 
 <h5>Leave a reply</h5>
 
