@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])    
+    @article = Article.find(params[:id])  
   end
 
   def new
@@ -15,10 +15,10 @@ class ArticlesController < ApplicationController
   
   def create
     article = Article.create(article_params)
-
-    if article.persisted? 
-      redirect_to article, notice: "Article was successfully created"
-    else 
+    
+    if article.persisted?
+      redirect_to article, notice: 'Article was successfully created.'
+    else
       render 'new'
     end
   end
@@ -39,9 +39,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+    @article.comments.destroy_all
     @article.destroy
 
-    redirect_to articles_path, notice: "Article successfully deleted"
+    redirect_to root_path, notice: "Article successfully deleted"
   end
 
   private
