@@ -9,13 +9,12 @@
   <%= form.submit "Submit comment"%>
 <% end %>
 
+<h4><%= @article.comments.count %> Comments</h4>
+
 <% @article.comments.each do |comment| %>
   <p> <%= comment.body %> </p>
+  <%= link_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 
 <%= link_to "Edit Article", edit_article_path %>
 <%= link_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
-
-<p>
-
-</p>

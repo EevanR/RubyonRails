@@ -39,9 +39,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+    @article.comments.destroy_all
     @article.destroy
 
-    redirect_to articles_path, notice: "Article successfully deleted"
+    redirect_to root_path, notice: "Article successfully deleted"
   end
 
   private
