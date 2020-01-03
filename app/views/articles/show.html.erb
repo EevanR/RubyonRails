@@ -13,8 +13,10 @@
 
 <% @article.comments.each do |comment| %>
   <p> <%= comment.body %> </p>
-  <%= link_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  <% if comment.id? %>
+    <%= button_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
 <% end %>
 
-<%= link_to "Edit Article", edit_article_path %>
-<%= link_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
+<%= button_to "Edit Article", edit_article_path %>
+<%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
