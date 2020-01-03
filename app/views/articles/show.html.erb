@@ -18,5 +18,5 @@
   <% end %>
 <% end %>
 
-<%= button_to "Edit Article", edit_article_path %>
+<%= button_to "Edit Article", edit_article_path, :method => "get" %>
 <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
