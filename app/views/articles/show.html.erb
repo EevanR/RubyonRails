@@ -1,24 +1,26 @@
 <h1><%= @article.title%></h1>
 
+<% if user_signed_in? %>
+  <%= button_to "Edit Article", edit_article_path, :method => "get" %>
+  <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
+<% end %>
+
 <p>
   <%= @article.content%>
 </p>
+
+<h5>Leave a reply</h5>
 
 <%= form_with(model: [ @article, @article.comments.build], local: true)  do |form|%>
   <%= form.text_field :body, placeholder: "Comment"%>
   <%= form.submit "Submit comment"%>
 <% end %>
 
-<h4><%= @article.comments.count %> Comments</h4>
+<h5><%= @article.comments.count %> Comments</h5>
 
 <% @article.comments.each do |comment| %>
   <p> <%= comment.body %> </p>
   <% if comment.id? && user_signed_in? %>
     <%= button_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= button_to "Edit Article", edit_article_path, :method => "get" %>
-  <%= button_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }  %>
 <% end %>
