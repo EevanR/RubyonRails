@@ -5,14 +5,8 @@ class ArticlePolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    @user
-  end
-
   def edit?
-    @record.author == @user
+    @record.author_id == @user.id
   end
 
-  def show?
-  end
 end

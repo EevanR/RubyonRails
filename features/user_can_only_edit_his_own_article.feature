@@ -30,4 +30,4 @@ Feature: User can only edit his own article
 
   Scenario: User can NOT edit another users article
     Given I am on the edit page for "Small news"
-    Then I should see "You are not authorized to do that"
+    Then I should see "You are not authorized to edit this article"
