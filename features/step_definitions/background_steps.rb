@@ -30,3 +30,11 @@ Given('I am on the edit page for {string}') do |article_title|
   article = Article.find_by(title: article_title)
   visit edit_article_path(article)
 end
+
+Given("the following comments exist:") do |table|
+  table.hashes.each do |hash|
+    user = User.find_by(email: "user2@mail.com")
+    article = Article.find_by(title: "A breaking News Article")
+    article.comments.create(body: hash[:body], user_id: user.id)
+  end
+end

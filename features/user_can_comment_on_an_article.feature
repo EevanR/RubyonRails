@@ -5,12 +5,17 @@ Feature: User can comment on an article
 
   Background:
     Given the following users exist:
-      | email         | password |
-      | user@mail.com | password |
+      | email          | password |
+      | user@mail.com  | password |
+      | user2@mail.com | password |
 
     And the following articles exists:
       | title                   | content              | author        |
       | A breaking News Article | Some breaking action | user@mail.com |
+
+    And the following comments exist:
+      | body         |
+      | Some content |
 
     And I am logged in as "user@mail.com"
     And I am on the landing page
@@ -35,3 +40,8 @@ Feature: User can comment on an article
     Then I should see "1 Comment"
     And I click on "Delete Comment"
     Then I should see "0 Comments"
+
+  Scenario: User can only delete his own comment
+    When I click on "A breaking News Article"
+    And I click on "Delete Comment"
+    Then I should see "You are not allowed to delete this user's comment"
