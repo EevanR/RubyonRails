@@ -23,4 +23,4 @@
   <% if comment.id? && user_signed_in? && comment.user_id == current_user.id %>
     <%= button_to "Delete Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
-<% end %>
+<% end %> 

@@ -31,17 +31,17 @@ Feature: User can comment on an article
     When I click on "A breaking News Article"
     And I fill in "Comment" with ""
     And I click on "Submit comment"
-    Then I should see "Something went wrong"
+    Then I should see "Make sure comment field is filled in."
 
   Scenario: User can delete comment
     When I click on "A breaking News Article"
     And I fill in "Comment" with "This is fake news!!!!"
     And I click on "Submit comment"
-    Then I should see "1 Comment"
+    Then I should see "2 Comments"
     And I click on "Delete Comment"
-    Then I should see "0 Comments"
+    Then I should see "1 Comments"
 
-  Scenario: User can only delete his own comment
-    When I click on "A breaking News Article"
-    And I click on "Delete Comment"
-    Then I should see "You are not allowed to delete this user's comment"
+  Scenario: User can not delete another user's comment
+    Given I am logged in as "user2@mail.com"
+    And I click on "A breaking News Article"
+    Then I should not see "Delete Comment"

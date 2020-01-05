@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if comment.persisted?
       flash[:notice] = 'Your comment was successfully submited'
     else
-      flash[:alert] = 'Something went wrong'
+      flash[:alert] = 'Make sure comment field is filled in.'
     end
     redirect_to article_path(article)
   end

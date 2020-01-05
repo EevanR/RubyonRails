@@ -23,7 +23,6 @@ Feature: User can only edit his own article
     And I click on "Edit Article"
     Then I should be on the edit page for "Big news"
 
-
   Scenario: User can NOT see edit button on another users article
     And I click on "Small news"
     Then I should not see "Edit Article"
