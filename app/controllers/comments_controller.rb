@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     article = Article.find(params[:article_id])
-    comment = article.comments.create(comment_params.merge(user: current_user))
+    comment = article.comments.create(comment_params.merge(user: current_user, email: current_user.email))
     if comment.persisted?
       flash[:notice] = 'Your comment was successfully submited'
     else
