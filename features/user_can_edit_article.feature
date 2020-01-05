@@ -4,13 +4,13 @@ Feature: User can edit articles
   I would like to be able to edit articles
 
   Background:
-    Given the following user exist:
+    Given the following users exist:
       | email         | password |
       | user@mail.com | password |
 
     And the following articles exists:
-      | title                | content              |
-      | A breaking news item | Some breaking action |
+      | title                | content              | author        |
+      | A breaking news item | Some breaking action | user@mail.com |
 
   Scenario: User can successfully edit an article
     Given I am logged in as "user@mail.com"

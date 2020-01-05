@@ -1,24 +1,27 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+
   def create
-    
     article = Article.find(params[:article_id])
-
     comment = article.comments.create(comment_params.merge(user: current_user))
-
     if comment.persisted?
       flash[:notice] = 'Your comment was successfully submited'
     else
-      flash[:alert] = 'Something went wrong'
+      flash[:alert] = 'Make sure comment field is filled in.'
     end
     redirect_to article_path(article)
   end
 
   def destroy
+    @user = current_user
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
-    @comment.destroy
-    redirect_to article_path(@article)
+    if @comment.user_id == @user.id
+      @comment.destroy
+      redirect_to article_path(@article)
+    else
+      redirect_to article_path(@article), notice: "You are not allowed to delete this user's comment"
+    end
   end
 
   private

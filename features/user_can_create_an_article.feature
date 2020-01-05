@@ -4,7 +4,7 @@ Feature: User can create articles
     I would like to be able to create articles
 
     Background:
-        Given the following user exist:
+        Given the following users exist:
             | email         | password |
             | user@mail.com | password |
         And I am on the landing page
