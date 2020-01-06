@@ -39,9 +39,14 @@ footer {
 
 .h1, h1 {
   font-size: 2.5rem;
-  margin-left: 4%!important;
+  margin-left: 5%!important;
 }
 
 .col-4 {
   max-width: fit-content;
+}
+
+button, input {
+  overflow: visible;
+  border-radius: 5px;
 }
