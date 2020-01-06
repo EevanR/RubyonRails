@@ -1,15 +1,47 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.comment_box {
+  border-color: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.pb-4.mb-4.font-italic.border-bottom {
+  margin-top: 10px;
+  border-top: 1px solid #dee2e6!important;
+  border-bottom: white!important;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 0rem!important;
+  padding-top: 5px;
+}
+
+.mb-4, .my-4 {
+  color: #007bff;
+}
+
+.h5, h5 {
+  font-size: 1rem;
+}
+
+.h1, h1 {
+  font-size: 2.5rem;
+  margin-left: 4%!important;
+}
+
+.col-4 {
+  max-width: fit-content;
+}
