@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :article do
     title { "MyString" }
     content { "MyString" }
-    association :author_id, factory: :user
+    association :author, factory: :user
   end
 end
