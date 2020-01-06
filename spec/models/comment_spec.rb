@@ -14,9 +14,7 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to belong_to :user }
   end
 
-  describe 'Factory' do
-    it 'should have valid Factory' do
-      expect(FactoryBot.create(:comment)).to be_valid 
-    end
+  it "has a valid Factory" do
+    expect(FactoryBot.create(:comment)).to be_valid
   end
 end

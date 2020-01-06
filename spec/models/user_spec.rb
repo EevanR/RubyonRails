@@ -9,9 +9,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :remember_created_at }
   end
 
-  describe 'Factory' do
-    it 'should have valid Factory' do
-      expect(FactoryBot.create(:article)).to be_valid 
-    end
+  it "has a valid Factory" do
+    expect(FactoryBot.create(:user)).to be_valid
   end
 end
