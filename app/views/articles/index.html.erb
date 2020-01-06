@@ -8,8 +8,8 @@
         <%= link_to article.title, article %><br />
       </h3>
       <div class="blog-post">
-        <h4 class="blog-post-title"><%= article.content %></h4>
         <p class="blog-post-meta"><%= article.created_at.strftime("%F %T") %></p>
+        <p class="blog-post-title"><%= article.content %></p>
       </div>
     <% end %>
   </div>
