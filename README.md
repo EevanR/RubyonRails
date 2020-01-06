@@ -65,7 +65,7 @@ Install RSpec using bundler if desire to run testing:
 $ bundle install
 ```
 
-## Run testing frameworkds
+## Run testing frameworks
 In console:
 Run Rspec to run unit tests
 ```
