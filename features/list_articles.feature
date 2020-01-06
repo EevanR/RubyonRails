@@ -1,4 +1,4 @@
-Feature: List articles on index page
+Feature: List articles on landing page
     As a visitor,
     When i visit the application's landing page,
     I would like to see a list of articles

@@ -1,6 +1,6 @@
 Feature: User can only edit his own article
-  In order to keep my content secure
   As a user
+  In order to keep my content secure
   I want to be able to only edit my own articles
 
 
