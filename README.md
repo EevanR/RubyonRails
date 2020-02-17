@@ -1,7 +1,5 @@
 # Rails Article Application
 
-[![Coverage Status](https://coveralls.io/repos/github/EevanR/RubyonRails/badge.svg?branch=master)](https://coveralls.io/github/EevanR/RubyonRails?branch=master) 
-
 Rails Article App is a web applitcation that users can use to create accounts and share articles with one another. They may also comment on each others articles.
 
 ## Deployed Site
