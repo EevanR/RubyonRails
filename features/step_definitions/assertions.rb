@@ -18,6 +18,6 @@ Then("I should be on the edit page for {string}") do |article_title|
 end
 
 Then("I should see a list of articles") do
-  @articles = Article.all
-  expect(@articles.length).to eq 2
+  articles = Article.all
+  expect(articles.length).to eq 2
 end
